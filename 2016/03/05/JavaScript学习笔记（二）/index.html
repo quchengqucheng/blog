@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript学习笔记(二) | QuCheng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="引用类型Object类型创建方式
+new操作符+object构造函数  
+对象字面量属性名可以使用字符串形式，逗号分离属性，数值属性名自动转化为字符串(如下列的5)。1234567891011121314//new+object构造函数var person = new Object();person.name = &quot;qc&quot;;person.age = 20;//对象字面量var person = &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript学习笔记(二)">
+<meta property="og:url" content="http://quchengo.com/2016/03/05/JavaScript学习笔记（二）/index.html">
+<meta property="og:site_name" content="QuCheng's Blog">
+<meta property="og:description" content="引用类型Object类型创建方式
+new操作符+object构造函数  
+对象字面量属性名可以使用字符串形式，逗号分离属性，数值属性名自动转化为字符串(如下列的5)。1234567891011121314//new+object构造函数var person = new Object();person.name = &quot;qc&quot;;person.age = 20;//对象字面量var person = &amp;">
+<meta property="og:updated_time" content="2016-03-13T05:20:21.616Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript学习笔记(二)">
+<meta name="twitter:description" content="引用类型Object类型创建方式
+new操作符+object构造函数  
+对象字面量属性名可以使用字符串形式，逗号分离属性，数值属性名自动转化为字符串(如下列的5)。1234567891011121314//new+object构造函数var person = new Object();person.name = &quot;qc&quot;;person.age = 20;//对象字面量var person = &amp;">
+  
+    <link rel="alternative" href="/atom.xml" title="QuCheng&#39;s Blog" type="application/atom+xml">
+  
+  
+	<link rel="icon" type="image/x-icon" href="/favicon.icofavicon.ico">
+  
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">QuCheng&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">get busy living</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/" data-text="Home"><span>Home</span></a>
+        
+          <a class="main-nav-link" href="/blog/" data-text="Project"><span>Project</span></a>
+        
+          <a class="main-nav-link" href="/blog/" data-text="About"><span>About</span></a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://quchengo.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript学习笔记（二）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/03/05/JavaScript学习笔记（二）/" class="article-date">
+  <time datetime="2016-03-05T04:56:58.000Z" itemprop="datePublished">2016-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript学习笔记(二)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><h4 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h4><h6 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h6><ol>
+<li>new操作符+object构造函数  </li>
+<li>对象字面量<br>属性名可以使用字符串形式，逗号分离属性，数值属性名自动转化为字符串(如下列的5)。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//new+object构造函数</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person.name = <span class="string">"qc"</span>;</span><br><span class="line">person.age = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对象字面量</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">	<span class="string">"name"</span> : <span class="string">"qc"</span>,</span><br><span class="line">	age : <span class="number">20</span>,</span><br><span class="line">	<span class="number">5</span> : <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(person[<span class="string">"first name"</span>]);<span class="comment">//方括号表示法</span></span><br><span class="line">alert(person.name);         <span class="comment">//点表示法(建议使用)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><h6 id="创建方式-1"><a href="#创建方式-1" class="headerlink" title="创建方式"></a>创建方式</h6><ol>
+<li>array()构造函数  </li>
+<li>数字字面量<ul>
+<li><code>var a = [, , , , ,];</code>可能会创建5/6项的数组</li>
+<li>length属性设置为大于数组项数的值，增加的项取<code>undefined</code></li>
+<li>length属性方便在末尾添加新项，如<code>a[a.length] = &quot;4&quot;;</code><h6 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h6>instanceof<br>Array.isArray()<h6 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h6></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>toLocaleString():</li>
+<li>toString():</li>
+<li>string():</li>
+<li>valueOf():<h6 id="栈方法"><a href="#栈方法" class="headerlink" title="栈方法"></a>栈方法</h6>LIFO 后进先出：push() pop()<h6 id="队列方法"><a href="#队列方法" class="headerlink" title="队列方法"></a>队列方法</h6>FIFO 先进先出: push() shift() unshift() pop()<h6 id="重排方法"><a href="#重排方法" class="headerlink" title="重排方法"></a>重排方法</h6><h6 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h6>返回原数组改变后的数组</li>
+</ul>
+<ol>
+<li><p>concat()<br>基于当前数组所有项创建一个新数组</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var colors = ["0", "1, "2"];</span><br><span class="line">      var colors2 = colors.concat("3", ["4", "5"]);</span><br><span class="line">      alert(colors2);    //0,1,2,3,4,5</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>slice()<br>基于当前数组中的一个或者多个创建当前数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"0"</span>, <span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"4"</span>];</span><br><span class="line"><span class="keyword">var</span> colors2 = colors.slice(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> colors3 = colors.slice(<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line">alert(colors2);   <span class="comment">//1,2,3,4 从位置1往后</span></span><br><span class="line">alert(colors3);   <span class="comment">//1,2,3   从位置1开始到位置(4-1)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>splice()<br>向数组中部插入项  </p>
+<ul>
+<li>删除: splice(要删除的第一项的位置，删除的项数) </li>
+<li>插入/替换: splice(起始位置，删除的项数，n个插入的项)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">colors = [<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>];  </span><br><span class="line"><span class="keyword">var</span> removed = colors.splice(<span class="number">0</span>,<span class="number">1</span>);              <span class="comment">//remove the first item</span></span><br><span class="line">alert(colors);     <span class="comment">//green,blue</span></span><br><span class="line">alert(removed);    <span class="comment">//red - one item array</span></span><br><span class="line"></span><br><span class="line">removed = colors.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="string">"yellow"</span>, <span class="string">"orange"</span>);  <span class="comment">//在位置1上开始插入，即在blue前插入两项</span></span><br><span class="line">alert(colors);     <span class="comment">//green,yellow,orange,blue</span></span><br><span class="line">alert(removed);    <span class="comment">//empty array</span></span><br><span class="line"></span><br><span class="line">removed = colors.splice(<span class="number">1</span>, <span class="number">1</span>, <span class="string">"red"</span>, <span class="string">"purple"</span>);    <span class="comment">//在位置1上开始,删掉位置1上的字符串，并添加两项</span></span><br><span class="line">alert(colors);     <span class="comment">//green,red,purple,orange,blue</span></span><br><span class="line">alert(removed);    <span class="comment">//yellow - one item array</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h6 id="位置方法"><a href="#位置方法" class="headerlink" title="位置方法"></a>位置方法</h6><p>&emsp;&emsp;两方法都接受2个参数：查找的项,(查找的起点位置)。找不到返回-1。  </p>
+<ol>
+<li>indexOf()：从开头查找</li>
+<li>lastIndexOf()：从末尾查找  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert(numbers.indexOf(<span class="number">4</span>, <span class="number">4</span>));     <span class="comment">//5</span></span><br><span class="line">      alert(numbers.lastIndexOf(<span class="number">4</span>, <span class="number">4</span>)); <span class="comment">//3       </span></span><br><span class="line">      <span class="keyword">var</span> person = &#123; name: <span class="string">"Nicholas"</span> &#125;;<span class="comment">//？？？</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h6 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h6><p>&emsp;&emsp;每个方法都接受两个参数：每一项上运行的函数，(运行该函数的作用域对象——影响this值)。每个方法都先对每一项运行给定函数。<br>&emsp;&emsp;函数接受三个参数：遍历的数组项的值，该项在数组中的位置，数组对象本身。</p>
+<ul>
+<li>every()：每一项都返回true,则返回true。</li>
+<li>some() ：任一项返回true，则返回true。</li>
+<li>filter() ：返回该函数返回true的项组成的数组。</li>
+<li>forEach()：没有返回值</li>
+<li>map()：返回该函数结果组成的数组。<h6 id="归并方法"><a href="#归并方法" class="headerlink" title="归并方法"></a>归并方法</h6>&emsp;&emsp;</li>
+</ul>
+<h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><h4 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h4><h4 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h4><ol>
+<li>函数是对象，函数名是指针。</li>
+<li>没有函数重载（即同名函数，后者覆盖前者）</li>
+<li>函数声明&emsp;：代码开始执行之前，解析器就应经通过一个名为函数声明提升的过程，取读并将函数声明添加到执行环境中。<br>函数表达式：函数位于初始化语句中。</li>
+<li>函数作为值：函数的两个参数可以是函数，返回值可以是函数。</li>
+<li><p>函数内部属性：  </p>
+<ul>
+<li>arguments：保存函数参数的类数组对象。<br>callee: 在递归中用arguments.callee()可以随意更改指向函数的指针名，而不需修改内部的return后面。<br>arguments.callee.caller</li>
+<li>this：  </li>
+</ul>
+</li>
+<li><p>函数的属性和方法</p>
+<ul>
+<li>length：接受的命名参数的个数</li>
+<li>prototype：apply(),call()。扩充函数赖以运行的作用域。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">cat</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">cat.prototype = &#123; </span><br><span class="line">    food:<span class="string">"fish"</span>,</span><br><span class="line">       say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">           alert(<span class="string">"I love "</span>+<span class="keyword">this</span>.food);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">var</span> blackCat = <span class="keyword">new</span> cat;</span><br><span class="line">   blackCat.say(); <span class="comment">//I love fish</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> whiteCat = <span class="keyword">new</span> cat;</span><br><span class="line">   whiteCat.say(); <span class="comment">//I love fish</span></span><br><span class="line">   </span><br><span class="line">   <span class="keyword">var</span> whiteDog = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">   whiteDog.food = <span class="string">"chicken"</span>;</span><br><span class="line">   blackCat.say.call(whiteDog); <span class="comment">//I love chicken</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> redDog = &#123;food:<span class="string">"bone"</span>&#125;;</span><br><span class="line">   blackCat.say.call(redDog);   <span class="comment">//I love bone</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>基本包装类型<br>Boolean Number String</p>
+</li>
+<li>单体内置对象</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quchengo.com/blog/2016/03/05/JavaScript学习笔记（二）/" data-id="cilq4nkwk0003j4m4p64ayt8r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2015/12/26/JavaScript学习笔记（一）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript学习笔记(一)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-JavaScript学习笔记（二）" data-title="JavaScript学习笔记(二)" data-url="http://quchengo.com/blog/2016/03/05/JavaScript学习笔记（二）/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'quchengblog'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/essays/">essays</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/03/05/JavaScript学习笔记（二）/">JavaScript学习笔记(二)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/12/26/JavaScript学习笔记（一）/">JavaScript学习笔记(一)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/12/12/关于blog/">关于blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+      <div id="icon">
+          <a href="https://github.com/quchengqucheng">
+              <img src="http://7xoxot.com1.z0.glb.clouddn.com/iconfont-github.png" alt="github"/></a>
+          <a href="http://weibo.com/2830316645">
+              <img src="http://7xoxot.com1.z0.glb.clouddn.com/iconfont-sina.png" alt="sina"/></a>
+          <a href="http://www.zhihu.com/people/li-kong-97-11">
+              <img src="http://7xoxot.com1.z0.glb.clouddn.com/iconfont-zhihu.png" alt="zhihu"/></a>
+          <a href="#">
+              <img src="http://7xoxot.com1.z0.glb.clouddn.com/iconfont-weixin.png" alt="wechat"/></a>
+          <a href="#">
+              <img src="http://7xoxot.com1.z0.glb.clouddn.com/iconfont-youjian.png" alt="email"/></a>
+       </div>
+    <div id="footer-info" class="inner">
+      Copyright  &copy; 2016 QuCheng<br>
+      Theme by <a href="http://quchengqucheng.github.io/" target="_blank">Qucheng</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/" class="mobile-nav-link">Project</a>
+  
+    <a href="/blog/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+  </div>
+</body>
+</html>
