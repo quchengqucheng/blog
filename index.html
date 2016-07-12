@@ -67,6 +67,205 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Ife-2015-task2任务笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/07/12/Ife-2015-task2任务笔记/" class="article-date">
+  <time datetime="2016-07-12T01:18:28.000Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/07/12/Ife-2015-task2任务笔记/">Ife-2015-task2 任务笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="任务1：输入词汇并分割并输出checkbox"><a href="#任务1：输入词汇并分割并输出checkbox" class="headerlink" title="任务1：输入词汇并分割并输出checkbox"></a>任务1：输入词汇并分割并输出checkbox</h2><h5 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h5><ol>
+<li>输入框textarea,输入框内容提示placeholder</li>
+<li>输入框后的按钮botton，输入完成</li>
+<li>输入框下面的js验证文字</li>
+</ol>
+<h5 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h5><ol>
+<li>事件监听<ul>
+<li>输入框<ul>
+<li>focus:光标在输入框中</li>
+<li>blur :js验证，读取输入框内容</li>
+</ul>
+</li>
+<li>按钮<ul>
+<li>click：读取输入框内容并验证，无误则显示输入框内容成checkbox样式。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>读取输入框内容方法 readHobbyArr():</p>
+<ul>
+<li>替换输入框内容的分隔符，将多项用空格分开 trim(text).replace([\s,，、;；]+/g, “ “)</li>
+<li>将多项储存为数组 text.split(“ “)</li>
+<li><p>数组中元素进行去重操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">	    <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">	    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">	    	<span class="keyword">if</span>(arr[i])</span><br><span class="line">	        obj[arr[i]] = <span class="literal">true</span>;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj));</span><br><span class="line">	    <span class="keyword">return</span> <span class="built_in">Object</span>.keys(obj);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将生成的内容数组进行验证alterText(textArr)，并将结果显示在验证提示文字中</p>
+</li>
+<li>返回textArr</li>
+</ul>
+</li>
+<li>checkHobbyArr()</li>
+<li>showHobby()</li>
+</ol>
+<h2 id="任务2：倒计时"><a href="#任务2：倒计时" class="headerlink" title="任务2：倒计时"></a>任务2：倒计时</h2><ol>
+<li>点击倒计时按钮后开始比较end.getTime()与start.getTime()的时间先后，确定是倒计时文字显示内容。</li>
+<li>开始倒计时每隔1s执行一次倒计时文字更新window.setInterval(setCountdown, 1000);</li>
+<li>将window.setInterval(setCountdown, 1000);赋给一个全局变量doCountdown，用于检查此时是否有循环函数正在执行。</li>
+<li>倒计时为0或更新endTime后，清除正在循环执行的函数window.clearInterval(doCountdown)。</li>
+<li>其它<ul>
+<li>getTime 方法的返回值一个数值，表示从1970年1月1日0时0分0秒（UTC，即协调世界时）距离该日期对象所代表时间的毫秒数。</li>
+<li>Math.floor(x) 函数返回小于或等于数 “x” 的最大整数</li>
+</ul>
+</li>
+</ol>
+<h2 id="任务3：轮播图"><a href="#任务3：轮播图" class="headerlink" title="任务3：轮播图"></a>任务3：轮播图</h2><ol>
+<li>使用构造函数MovePic生成新的轮播图实例，初始可配置逆序/正序、是否循环、循环间隔时长。构造函数的原型具有默认配置MovePic.setDefaultData()。</li>
+<li>MovePic.renderCircle()根据图片数量加载对应的小圆点</li>
+<li>MovePic.move(this)因为页面初始定个在第一幅图上，所以在用setInterval使图片轮播时要先从整个页面的第二幅图开始。</li>
+</ol>
+<h2 id="任务4：搭建一个后端Server，使用Ajax来获取提示数据"><a href="#任务4：搭建一个后端Server，使用Ajax来获取提示数据" class="headerlink" title="任务4：搭建一个后端Server，使用Ajax来获取提示数据"></a>任务4：搭建一个后端Server，使用Ajax来获取提示数据</h2><h5 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"inputText"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"txtHint"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="JS-1"><a href="#JS-1" class="headerlink" title="JS"></a>JS</h5><ol>
+<li>事件监听<ul>
+<li>输入框内按下键盘<ul>
+<li>keybown:如果是按了上、下或回车键则对显示的光标进行相应操作。其它则showHint()显示提示词汇。</li>
+</ul>
+</li>
+<li>提示词汇盒<ul>
+<li>click：显示提示词汇</li>
+<li>mouseover：</li>
+<li>mouseout ：</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>showHint()函数获取输入框内的值，作为参数传递给后端。</li>
+<li>showHintText()函数在用户按下回车键后执行，在输入框中显示提示词汇</li>
+<li>mouseover与mouseout的样式改变通过js更改相应位置的classname， 而不是通过js控制css样式。</li>
+</ol>
+<h5 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h5><p>node.js源代码负责对数据库进行查询，然后用 HTML 表格返回结果</p>
+<ul>
+<li>index</li>
+<li>server：Http服务器模块，url模块获取url参数并传递给路由。</li>
+<li>router：路由，把请求对应到请求处理程序</li>
+<li>requestHandlers：请求处理程序</li>
+</ul>
+<h2 id="任务5：界面拖拽交互"><a href="#任务5：界面拖拽交互" class="headerlink" title="任务5：界面拖拽交互"></a>任务5：界面拖拽交互</h2><ol>
+<li><p>拖放某元素时，依次触发时间入下：dragstart drag dragend</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置元素可拖放</span></span><br><span class="line">Element.draggable = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>元素被拖放到有效目标位置时，依次触发事件：dragenter dragover dragleave/drop</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置放置目标</span></span><br><span class="line">Element.addEventListener(<span class="string">"dragover"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"> e </span>) </span>&#123;</span><br><span class="line">	e.preventDefault();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断拖放位置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> drapOn = e.target;<span class="comment">//drapOn为可放置目标元素</span></span><br><span class="line"><span class="keyword">if</span>(e.target.className === <span class="string">"drag-section"</span>) &#123;</span><br><span class="line">	drapOn = e.target.parentNode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//console.log(e.clientX,e.clientY,e.target.offsetLeft,e.target.offsetHeight,e.target.offsetTop,e.target.offsetParent);</span></span><br><span class="line"><span class="comment">//e.target.offsetParent是e.target元素上面最近的已定位的元素</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> top = e.clientY - drapOn.offsetTop;  <span class="comment">//可拖放元素距离可放置目标元素最顶的距离</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Math</span>.floor(top/<span class="number">50</span>);            <span class="comment">//num为鼠标停止上方的小方块个数</span></span><br><span class="line"><span class="keyword">var</span> allnum =  drapOn.getElementsByClassName(<span class="string">"drag-section"</span>);<span class="comment">//</span></span><br><span class="line"><span class="keyword">if</span>(num&gt;allnum.length+<span class="number">1</span>)</span><br><span class="line">	num = allnum.length;</span><br><span class="line"></span><br><span class="line">drapOn.style.background = <span class="string">""</span>;</span><br><span class="line">dragged.parentNode.removeChild( dragged );</span><br><span class="line">drapOn.insertBefore(dragged,allnum[num]);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>页面坐标：pageX,pageY ( 页面坐标 = 客户端信息 + 滚动信息 )</li>
+<li>客户区坐标位置：clientX,clientY</li>
+<li>滚动信息：scrollLeft,scrollRight</li>
+<li>对块级元素来说，offsetTop、offsetLeft、offsetWidth 、offsetHeight 描述了元素相对于 offsetParent 的边界框。</li>
+</ul>
+</li>
+</ol>
+<h3 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h3><ol>
+<li>方法函数有返回值得话就一定得赋予到一个变量上吗？</li>
+<li>按下keyborad的瞬间不知道按下的是哪一个，需要window.setTimeout(later,100);0.1s延迟之后调用later函数来确定按下的是哪一个按钮。别的方法？</li>
+<li>event.preventDefault();阻止默认动作（如打开一些元素的链接）?</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quchengo.com/blog/2016/07/12/Ife-2015-task2任务笔记/" data-id="ciqjfn0rk0000w4m45n3ylo90" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/IFE任务笔记/">IFE任务笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript 设计模式学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/04/07/JavaScript 设计模式学习笔记/" class="article-date">
+  <time datetime="2016-04-07T11:43:33.000Z" itemprop="datePublished">2016-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/04/07/JavaScript 设计模式学习笔记/">JavaScript设计模式学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>工厂模式是抽象的创建具体对象的过程。解决了创建相似对象的问题，未解决对象识别的问题。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    o.name = name;</span><br><span class="line">    o.age = age;</span><br><span class="line">    o.job = job;</span><br><span class="line">    o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;    </span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1 = createPerson(<span class="string">"Nicholas"</span>, <span class="number">29</span>, <span class="string">"Software Engineer"</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = createPerson(<span class="string">"Greg"</span>, <span class="number">27</span>, <span class="string">"Doctor"</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h3><p>构造函数用来创建特定类型的对象。创建自定义的构造函数是将他的实例表示为一种特定的类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>)</span>&#123;<span class="comment">//构建函数以大写字母开头</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;           <span class="comment">//没有显式的创建对象，属性和方法赋给了this对象</span></span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">    ①<span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//每个方法都要在每个实例上重新创建一遍。</span></span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line">②<span class="keyword">this</span>.sayName = <span class="keyword">new</span> <span class="function"><span class="keyword">function</span>(<span class="params">"alert(this.name</span>)");  </span><br><span class="line">//与声明函数在逻辑上等价。即每个<span class="title">Person</span>实例都包含一个不同的<span class="title">function</span>实例  </span><br><span class="line">③<span class="title">this</span>.<span class="title">sayName</span> = <span class="title">sayName</span>;       //函数定义转移到构造函数外部</span><br><span class="line">                               //没有<span class="title">return</span>语句</span><br><span class="line">&#125;</span><br><span class="line"><span class="title">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;           <span class="comment">//此处sayName全局函数</span></span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"Nicholas"</span>, <span class="number">29</span>, <span class="string">"Software Engineer"</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"Greg"</span>, <span class="number">27</span>, <span class="string">"Doctor"</span>);</span><br><span class="line"></span><br><span class="line">person1.sayName();   <span class="comment">//"Nicholas"</span></span><br><span class="line">person2.sayName();   <span class="comment">//"Greg"</span></span><br><span class="line"></span><br><span class="line">alert(person1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);  <span class="comment">//true</span></span><br><span class="line">alert(person1 <span class="keyword">instanceof</span> Person);  <span class="comment">//true</span></span><br><span class="line">alert(person2 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);  <span class="comment">//true</span></span><br><span class="line">alert(person2 <span class="keyword">instanceof</span> Person);  <span class="comment">//true</span></span><br><span class="line"><span class="comment">//两对象都有constructor构造函数属性</span></span><br><span class="line">alert(person1.constructor == Person);  <span class="comment">//true</span></span><br><span class="line">alert(person2.constructor == Person);  <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">alert(person1.sayName == person2.sayName);  <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<p>上述</p>
+<ul>
+<li>①声明函数</li>
+<li>②与声明函数逻辑上等价。</li>
+<li>③函数定义转移到构造函数外部，此处sayName全局函数，sayName包含一个指向函数外部的指针。<br>①②中的每个方法都要在每个实例上重新创建一遍。即每个Person实例都包含一个不同的function实例。③解决了①②两个函数做同一件事情的问题。但若对象要定义很多方法，就要定义很多全局函数。那么自定义的引用类型就没有封装性而言了。可通过原型模式解决。<h3 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h3>原型模式创建的每个函数都有个prototype(原型)属性，这个属性是个指针，指向一个对象。原型对象可以让所有对象实例共 享它所包含的属性和方法。<h3 id="单例模式-Singleton"><a href="#单例模式-Singleton" class="headerlink" title="单例模式  Singleton"></a>单例模式  Singleton</h3>单例模式用来划分命名空间，减少页面中全局变量的数量，避免多人开发时代码冲突。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下面创建了一个最简单的有属性和方法的单例</span></span><br><span class="line"><span class="keyword">var</span> Singleton = &#123;</span><br><span class="line">	name: <span class="string">"qc"</span></span><br><span class="line">    attr: <span class="number">1</span>,</span><br><span class="line">    another_attr: <span class="string">'value'</span>,</span><br><span class="line"></span><br><span class="line">    method: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;...&#125;,</span><br><span class="line">    another_method: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;...&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line">Singleton.attr += <span class="number">1</span>;</span><br><span class="line">Singleton.method();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="单例模式命名空间-JavaScript-Namespacing"><a href="#单例模式命名空间-JavaScript-Namespacing" class="headerlink" title="单例模式命名空间 JavaScript Namespacing"></a>单例模式命名空间 JavaScript Namespacing</h5><p>命名空间是单例模式在js中的一个应用。命名空间将对象作为另一个对象的属性，因此深度为一个或多个图层。命名空间保证全局变量数量最低。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单例模式命名空间</span></span><br><span class="line"><span class="keyword">var</span> Namespace = &#123;</span><br><span class="line">    Util: &#123;</span><br><span class="line">        util_method1: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;...&#125;,</span><br><span class="line">        util_method2: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;...&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Ajax: &#123;</span><br><span class="line">        ajax_method: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;...&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    some_method: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;...&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line">Namespace.Util.util_method1();</span><br><span class="line">Namespace.Ajax.ajax_method();</span><br><span class="line">Namespace.some_method();</span><br></pre></td></tr></table></figure></p>
+<h3 id="组合模式-Composite"><a href="#组合模式-Composite" class="headerlink" title="组合模式 Composite"></a>组合模式 Composite</h3><p>组合使用构造函数模式和原型模式。<br>构造函数模式用于定义实例属性，原型模式用于定义方法和共享的属性</p>
+<h3 id="动态原型模式"><a href="#动态原型模式" class="headerlink" title="动态原型模式"></a>动态原型模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;           </span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>.sayName != <span class="string">"function"</span>) &#123;</span><br><span class="line">		Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">        	alert(<span class="keyword">this</span>.name);</span><br><span class="line">   		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用动态原型模式时，不能使用对象字面量重写原型。在创建了实例的情况下重写原型，会切断现有实例于原型间的联系。</p>
+<h3 id="寄生构造函数模式"><a href="#寄生构造函数模式" class="headerlink" title="寄生构造函数模式"></a>寄生构造函数模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    o.name = name;</span><br><span class="line">    o.age = age;</span><br><span class="line">    o.job = job;</span><br><span class="line">    o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;    </span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"Nicholas"</span>, <span class="number">29</span>, <span class="string">"Software Engineer"</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"Greg"</span>, <span class="number">27</span>, <span class="string">"Doctor"</span>);</span><br></pre></td></tr></table></figure>
+<p>使用new操作符把包装函数叫做构造函数外，与工厂模式是相同的。此模式用于在特殊情况下创建构造函数。比如想创建具有额外方法的特殊数组。</p>
+<h3 id="稳妥构造函数模式-Durable"><a href="#稳妥构造函数模式-Durable" class="headerlink" title="稳妥构造函数模式 Durable"></a>稳妥构造函数模式 Durable</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">    o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(name);</span><br><span class="line">    &#125;;    </span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用稳妥的Person构造函数</span></span><br><span class="line"><span class="keyword">var</span> person1 = Person(<span class="string">"Nicholas"</span>, <span class="number">29</span>, <span class="string">"Software Engineer"</span>);</span><br><span class="line">person1.sayName();</span><br></pre></td></tr></table></figure>
+<p>除了使用sayName()方法外，没有其他方法访问name的值了</p>
+<h3 id="外观模式-Facade"><a href="#外观模式-Facade" class="headerlink" title="外观模式 Facade"></a>外观模式 Facade</h3><p>外观模式的目的在于将大型逻辑片段简化为一个简单的函数调用操作。<br>下面是一个简单的外观模式例子，如下代码作为添加监听事件的函数，可兼容浏览器差异。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addEvent</span>(<span class="params">elem, type, func</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//兼容浏览器差异</span></span><br><span class="line">	<span class="keyword">if</span> (elem.addEventListener) &#123;</span><br><span class="line">		elem.addEventListener(type, func);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (elem.attachEvent) &#123;</span><br><span class="line">		elem.attachEvent(<span class="string">"on"</span> + type, func);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		elem[<span class="string">"on"</span> + type] = func;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过能力检测，对浏览器支持的API进行判断，自动调用有效的事件绑定API来绑定时间。开发者在绑定时间的时候，就不需要写冗长的判断代码，直接专注于业务就好，这是门面模式带来的最直接的便利。  </p>
+<p>在task30需要校验U多个表单</p>
+<ul>
+<li>校验结果正确时，表单边框显示绿色，并在下方显示验证通过的描述文字</li>
+<li>校验结果错误时，表单边框显示红色，并在下方显示验证错误的描述文字<br>如下是校验名称表单的一段代码。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = e.value;</span><br><span class="line"><span class="keyword">var</span> trimReg = <span class="regexp">/^\s+|\s+$/g</span>;                          <span class="comment">//去除首尾空格</span></span><br><span class="line"><span class="keyword">var</span> chineseReg = <span class="regexp">/[\u4e00-\u9fa5]/g</span>;                 <span class="comment">//查找中文字符</span></span><br><span class="line"><span class="keyword">var</span> lenReg = <span class="regexp">/^.&#123;4,16&#125;$/</span>;                            <span class="comment">//查找4~16个单字符</span></span><br><span class="line">value = value.replace(trimReg,<span class="string">""</span>).replace(chineseReg,<span class="string">"ha"</span>);<span class="comment">//原始输入去除首尾空格，将中文字符长度转换为2</span></span><br><span class="line"><span class="keyword">if</span>(value==<span class="literal">null</span>||value==<span class="string">""</span>) &#123;</span><br><span class="line">	alertText.innerHTML = <span class="string">"姓名不能为空"</span>;</span><br><span class="line">	alertText.style.color = <span class="string">"red"</span>;</span><br><span class="line">	e.style.borderColor = <span class="string">"red"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (!lenReg.test(value)) &#123;</span><br><span class="line">	alertText.innerHTML = <span class="string">"长度需为4~16个字符"</span>;</span><br><span class="line">	alertText.style.color = <span class="string">"red"</span>;</span><br><span class="line">	e.style.borderColor = <span class="string">"red"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	alertText.innerHTML = <span class="string">"名称格式正确"</span>;</span><br><span class="line">	alertText.style.color = <span class="string">"green"</span>;</span><br><span class="line">	e.style.borderColor = <span class="string">"green"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其它表单的校验代码和这大致相同，它们都在做同样的事情。把相同的代码（比如校验后的表单样式的改变）整理为一个函数，可减少代码总行数，增加代码可读性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//除去input输入文字的首尾空格</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trim</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> trimReg = <span class="regexp">/^\s+|\s+$/g</span>;</span><br><span class="line">	<span class="keyword">return</span> e.value.replace(trimReg,<span class="string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//校验后表格样式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkOutChange</span>(<span class="params">e,innerText,color</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> alertText = e.parentElement.nextElementSibling;</span><br><span class="line">	alertText.innerHTML = innerText;</span><br><span class="line">	alertText.style.color = color;</span><br><span class="line">	e.style.borderColor = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkOutName</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> chineseReg = <span class="regexp">/[\u4e00-\u9fa5]/g</span>;                 <span class="comment">//查找中文字符</span></span><br><span class="line">	<span class="keyword">var</span> lenReg = <span class="regexp">/^.&#123;4,16&#125;$/</span>;                            <span class="comment">//查找4~16个单字符</span></span><br><span class="line">	<span class="keyword">var</span> value = trim(e).replace(chineseReg,<span class="string">"ha"</span>);        <span class="comment">//原始输入去除首尾空格，将中文字符长度转换为2</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(value==<span class="literal">null</span>||value==<span class="string">""</span>) &#123;</span><br><span class="line">		checkOutChange(e,<span class="string">"姓名不能为空"</span>,<span class="string">"red"</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (!lenReg.test(value)) &#123;</span><br><span class="line">		checkOutChange(e,<span class="string">"长度需为4~16个字符"</span>,<span class="string">"red"</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		checkOutChange(e,<span class="string">"名称格式正确"</span>,<span class="string">"green"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quchengo.com/blog/2016/04/07/JavaScript 设计模式学习笔记/" data-id="ciqjfn0rs0001w4m4qromuaz2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Flexbox布局模块的应用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2016/03/12/Flexbox布局模块的应用/" class="article-date">
@@ -133,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quchengo.com/blog/2016/03/12/Flexbox布局模块的应用/" data-id="cim66sbv80000ywm4xwhclto9" class="article-share-link">Share</a>
+      <a data-url="http://quchengo.com/blog/2016/03/12/Flexbox布局模块的应用/" data-id="ciqjfn0si0006w4m4rout29a6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
@@ -242,7 +441,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quchengo.com/blog/2016/03/05/JavaScript学习笔记（二）/" data-id="cim66sbw20003ywm4hk1m75t9" class="article-share-link">Share</a>
+      <a data-url="http://quchengo.com/blog/2016/03/05/JavaScript学习笔记（二）/" data-id="ciqjfn0sn0008w4m491wy08ub" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/JavaScript/">JavaScript</a></li></ul>
@@ -285,7 +484,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quchengo.com/blog/2015/12/26/JavaScript学习笔记（一）/" data-id="cim66sbvl0001ywm4cacz8hnz" class="article-share-link">Share</a>
+      <a data-url="http://quchengo.com/blog/2015/12/26/JavaScript学习笔记（一）/" data-id="ciqjfn0s60004w4m44ra6ujy8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/JavaScript/">JavaScript</a></li></ul>
@@ -328,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quchengo.com/blog/2015/12/12/关于blog/" data-id="cim66sbw90004ywm4tk1z7wj6" class="article-share-link">Share</a>
+      <a data-url="http://quchengo.com/blog/2015/12/12/关于blog/" data-id="ciqjfn0s10003w4m45gme92n0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/essays/">essays</a></li></ul>
@@ -351,7 +550,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/essays/">essays</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IFE任务笔记/">IFE任务笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/essays/">essays</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -360,7 +559,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -372,6 +571,14 @@
       <ul>
         
           <li>
+            <a href="/blog/2016/07/12/Ife-2015-task2任务笔记/">Ife-2015-task2 任务笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/04/07/JavaScript 设计模式学习笔记/">JavaScript设计模式学习笔记</a>
+          </li>
+        
+          <li>
             <a href="/blog/2016/03/12/Flexbox布局模块的应用/">Flexbox布局模块应用</a>
           </li>
         
@@ -381,10 +588,6 @@
         
           <li>
             <a href="/blog/2015/12/26/JavaScript学习笔记（一）/">JavaScript学习笔记(一)</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2015/12/12/关于blog/">关于blog</a>
           </li>
         
       </ul>
